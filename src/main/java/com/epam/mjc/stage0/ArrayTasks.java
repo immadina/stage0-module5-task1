@@ -31,6 +31,9 @@ public class ArrayTasks {
      */
     public int[] generateNumbers(int length) {
         int[] result = new int[length];
+        for (int i = 0; i < length; i++) {
+            result[i] = i + 1;
+        }
         return result;
     }
 
@@ -82,8 +85,8 @@ public class ArrayTasks {
     public String[] reverseArray(String[] arr) {
         String[] result = new String[arr.length];
 
-        for (int i = arr.length-1; i >= 0; i--) {
-            result[arr.length - 1] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            result[arr.length - 1 - i] = arr[i];
         }
         return result;
     }
@@ -108,13 +111,14 @@ public class ArrayTasks {
             }
         }
         int[] result = new int[num_positive];
-
+        int counter = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
-
+                result[counter] = arr[i];
+                counter++;
             }
         }
-        return arr;
+        return result;
     }
 
     /**
